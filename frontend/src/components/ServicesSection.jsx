@@ -1,164 +1,78 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const ServicesSection = () => {
-  const [activeService, setActiveService] = useState(0);
+  const [activeFaq, setActiveFaq] = useState(null);
 
-  const services = [
+  const faqs = [
     {
-      id: 0,
-      title: "Digital Payment Solutions",
-      description:
-        "Revolutionary digital payment systems with AI-powered security and seamless blockchain integration for the future of finance.",
-      image:
-        "/images/smart-asian-male-professional-civil-engineer-hand-hold-laptop-site-construction-check-with-infastrcture-building-background.jpg",
-      features: [
-        "AI-powered fraud detection",
-        "Blockchain integration",
-        "Real-time analytics",
-        "Multi-currency support",
-      ],
-      gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-      icon: "💳",
+      question: "Bagaimana cara bayar listrik di Smart Payment?",
+      answer:
+        "Sangat mudah! Cukup buka aplikasi, scan QR code dari tagihan listrik atau input nomor pelanggan PLN, pilih metode pembayaran, dan konfirmasi. Pembayaran langsung terverifikasi dalam hitungan detik.",
     },
     {
-      id: 1,
-      title: "Mobile Payment Innovation",
-      description:
-        "Next-generation mobile payment solutions with biometric authentication and IoT connectivity for smart business operations.",
-      image: "/images/workers-control-room.jpg",
-      features: [
-        "Biometric security",
-        "IoT integration",
-        "Offline processing",
-        "Smart notifications",
-      ],
-      gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
-      icon: "📱",
+      question: "Apakah ada biaya admin untuk pembayaran listrik?",
+      answer:
+        "Tidak ada sama sekali! Smart Payment tidak memungut biaya admin atau biaya tambahan apapun. Anda hanya membayar sesuai tagihan listrik PLN Anda.",
     },
     {
-      id: 2,
-      title: "Cloud Payment Infrastructure",
-      description:
-        "Enterprise-grade cloud infrastructure with quantum encryption and global edge computing for maximum performance and security.",
-      image:
-        "/images/young-asian-technician-man-colleague-safety-uniform-checking-operation-sun-photovoltaic-solar-panel-use-laptop-computer-while-working-solar-farm (1).jpg",
-      features: [
-        "Quantum encryption",
-        "Global edge computing",
-        "99.99% uptime",
-        "Auto-scaling AI",
-      ],
-      gradient: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
-      icon: "☁️",
+      question: "Bagaimana keamanan data saya dijamin?",
+      answer:
+        "Data dan transaksi Anda dilindungi dengan enkripsi tingkat bank dan sistem keamanan berlapis. Kami menggunakan teknologi terdepan untuk memastikan privasi dan keamanan maksimal.",
+    },
+    {
+      question: "Bisa cek riwayat pembayaran listrik?",
+      answer:
+        "Tentu saja! Anda bisa melihat detail tagihan, riwayat pembayaran lengkap, dan download struk pembayaran kapan saja melalui aplikasi Smart Payment.",
+    },
+    {
+      question: "Bagaimana jika ada masalah saat pembayaran?",
+      answer:
+        "Tim customer support kami siap membantu 24/7. Anda bisa chat langsung, lihat FAQ, atau ikuti video tutorial yang tersedia di aplikasi.",
+    },
+    {
+      question: "Apakah Smart Payment resmi dari PLN?",
+      answer:
+        "Smart Payment adalah platform resmi yang bekerja sama dengan PLN untuk memudahkan pembayaran listrik. Semua transaksi terintegrasi langsung dengan sistem PLN.",
     },
   ];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveService((prev) => (prev + 1) % services.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [services.length]);
+  const toggleFaq = (index) => {
+    setActiveFaq(activeFaq === index ? null : index);
+  };
 
   return (
     <section className="services-section">
       <div className="container">
-        <div className="services-header" data-aos="fade-up">
+        <div className="services-header">
           <h2 className="services-main-title">
-            Our <span className="gradient-text">Advanced</span> Payment Services
+            Pertanyaan <span className="gradient-text">Sering Diajukan</span>
           </h2>
           <p className="services-subtitle">
-            Experience the future of payments with our cutting-edge technology
-            solutions
+            Temukan jawaban untuk pertanyaan yang paling sering ditanyakan
+            tentang Smart Payment
           </p>
         </div>
 
-        <div className="services-main-content">
-          <div
-            className="services-text"
-            data-aos="fade-right"
-            data-aos-delay="200"
-          >
-            <div className="service-indicator">
-              <span className="indicator-text">
-                Service {activeService + 1} of {services.length}
-              </span>
-              <div className="indicator-dots">
-                {services.map((_, index) => (
-                  <button
-                    key={index}
-                    className={`dot ${activeService === index ? "active" : ""}`}
-                    onClick={() => setActiveService(index)}
-                  />
-                ))}
-              </div>
-            </div>
-
-            <h3 className="services-title">{services[activeService].title}</h3>
-            <p className="services-description">
-              {services[activeService].description}
-            </p>
-
-            <div className="services-features">
-              {services[activeService].features.map((feature, idx) => (
-                <div
-                  key={idx}
-                  className="feature-item"
-                  data-aos="fade-up"
-                  data-aos-delay={400 + idx * 100}
-                >
-                  <span className="feature-icon">✓</span>
-                  <span className="feature-text">{feature}</span>
+        <div className="faq-container">
+          {faqs.map((faq, index) => (
+            <div
+              key={index}
+              className={`faq-item ${activeFaq === index ? "active" : ""}`}
+              onClick={() => toggleFaq(index)}
+            >
+              <div className="faq-question">
+                <h4>{faq.question}</h4>
+                <div className="faq-icon">
+                  <span>{activeFaq === index ? "−" : "+"}</span>
                 </div>
-              ))}
-            </div>
-
-            <div className="services-navigation">
-              <button
-                className="nav-btn prev"
-                onClick={() => setActiveService(Math.max(0, activeService - 1))}
+              </div>
+              <div
+                className={`faq-answer ${activeFaq === index ? "active" : ""}`}
               >
-                <span>←</span>
-              </button>
-              <button
-                className="nav-btn next"
-                onClick={() =>
-                  setActiveService(
-                    Math.min(services.length - 1, activeService + 1)
-                  )
-                }
-              >
-                <span>→</span>
-              </button>
-            </div>
-          </div>
-
-          <div
-            className="services-visual"
-            data-aos="fade-left"
-            data-aos-delay="400"
-          >
-            <div className="service-image-container">
-              <div className="service-image-wrapper">
-                {services.map((service, index) => (
-                  <div
-                    key={service.id}
-                    className={`service-image-card ${
-                      activeService === index ? "active" : ""
-                    }`}
-                  >
-                    <img src={service.image} alt={service.title} />
-                    <div className="service-overlay">
-                      <div className="service-icon">
-                        <span>{service.icon}</span>
-                      </div>
-                      <h4 className="service-title">{service.title}</h4>
-                    </div>
-                  </div>
-                ))}
+                <p>{faq.answer}</p>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
