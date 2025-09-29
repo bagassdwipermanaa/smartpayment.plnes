@@ -49,7 +49,7 @@ const Header = () => {
             <Link to="/contact">CONTACT US</Link>
           </li>
           <li data-aos="fade-down" data-aos-delay="500">
-            <a href="#signin">SIGN IN</a>
+            <Link to="/login">SIGN IN</Link>
           </li>
         </ul>
       </nav>
