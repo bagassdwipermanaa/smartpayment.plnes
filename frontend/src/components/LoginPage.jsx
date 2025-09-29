@@ -37,153 +37,199 @@ const LoginPage = () => {
         <div className="login-container">
           <div className="login-card">
             <div className="login-header">
-              <div className="login-logo">
+              <h1
+                className="login-title"
+                data-aos="fade-down"
+                data-aos-delay="100"
+              >
+                Welcome Back
+              </h1>
+              <p
+                className="login-subtitle"
+                data-aos="fade-down"
+                data-aos-delay="200"
+              >
+                Sign in to your Smart Payment account
+              </p>
+              <div
+                className="login-logo"
+                data-aos="zoom-in"
+                data-aos-delay="300"
+              >
                 <img
                   src="/images/logoplnes-removebg-preview.png"
                   alt="PLN Logo"
                   className="logo-image"
                 />
               </div>
-              <h1 className="login-title">Welcome Back</h1>
-              <p className="login-subtitle">
-                Sign in to your Smart Payment account
-              </p>
             </div>
 
-            <form className="login-form" onSubmit={handleSubmit}>
-              <div className="form-group">
-                <label htmlFor="email" className="form-label">
-                  Email Address
-                </label>
-                <div className="input-wrapper">
-                  <div className="input-icon">
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                      <polyline points="22,6 12,13 2,6" />
-                    </svg>
-                  </div>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="form-input"
-                    placeholder="Enter your email"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="password" className="form-label">
-                  Password
-                </label>
-                <div className="input-wrapper">
-                  <div className="input-icon">
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                      <circle cx="12" cy="16" r="1" />
-                      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                    </svg>
-                  </div>
-                  <input
-                    type={showPassword ? "text" : "password"}
-                    id="password"
-                    name="password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    className="form-input"
-                    placeholder="Enter your password"
-                    required
-                  />
-                  <button
-                    type="button"
-                    className="password-toggle"
-                    onClick={() => setShowPassword(!showPassword)}
-                  >
-                    {showPassword ? (
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" />
-                        <line x1="1" y1="1" x2="23" y2="23" />
-                      </svg>
-                    ) : (
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                        <circle cx="12" cy="12" r="3" />
-                      </svg>
-                    )}
-                  </button>
-                </div>
-              </div>
-
-              <div className="form-options">
-                <label className="checkbox-wrapper">
-                  <input type="checkbox" className="checkbox-input" />
-                  <span className="checkbox-custom"></span>
-                  <span className="checkbox-label">Remember me</span>
-                </label>
-                <Link to="/forgot-password" className="forgot-link">
-                  Forgot Password?
-                </Link>
-              </div>
-
-              <button
-                type="submit"
-                className={`login-button ${isLoading ? "loading" : ""}`}
-                disabled={isLoading}
+            <div className="login-form-container">
+              <form
+                className="login-form"
+                onSubmit={handleSubmit}
+                data-aos="fade-left"
+                data-aos-delay="400"
               >
-                {isLoading ? (
-                  <div className="loading-spinner"></div>
-                ) : (
-                  "Sign In"
-                )}
-              </button>
-            </form>
+                <div
+                  className="form-group"
+                  data-aos="fade-up"
+                  data-aos-delay="500"
+                >
+                  <label htmlFor="email" className="form-label">
+                    Email Address
+                  </label>
+                  <div className="input-wrapper">
+                    <div className="input-icon">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                      </svg>
+                    </div>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="form-input"
+                      placeholder="Enter your email"
+                      required
+                    />
+                  </div>
+                </div>
 
-            <div className="login-footer">
-              <p className="signup-text">
-                Don't have an account?{" "}
-                <Link to="/register" className="signup-link">
-                  Sign up here
-                </Link>
-              </p>
+                <div
+                  className="form-group"
+                  data-aos="fade-up"
+                  data-aos-delay="600"
+                >
+                  <label htmlFor="password" className="form-label">
+                    Password
+                  </label>
+                  <div className="input-wrapper">
+                    <div className="input-icon">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <rect
+                          x="3"
+                          y="11"
+                          width="18"
+                          height="11"
+                          rx="2"
+                          ry="2"
+                        />
+                        <circle cx="12" cy="16" r="1" />
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                      </svg>
+                    </div>
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      id="password"
+                      name="password"
+                      value={formData.password}
+                      onChange={handleChange}
+                      className="form-input"
+                      placeholder="Enter your password"
+                      required
+                    />
+                    <button
+                      type="button"
+                      className="password-toggle"
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      {showPassword ? (
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" />
+                          <line x1="1" y1="1" x2="23" y2="23" />
+                        </svg>
+                      ) : (
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      )}
+                    </button>
+                  </div>
+                </div>
+
+                <div
+                  className="form-options"
+                  data-aos="fade-up"
+                  data-aos-delay="700"
+                >
+                  <label className="checkbox-wrapper">
+                    <input type="checkbox" className="checkbox-input" />
+                    <span className="checkbox-custom"></span>
+                    <span className="checkbox-label">Remember me</span>
+                  </label>
+                  <Link to="/forgot-password" className="forgot-link">
+                    Forgot Password?
+                  </Link>
+                </div>
+
+                <button
+                  type="submit"
+                  className={`login-button ${isLoading ? "loading" : ""}`}
+                  disabled={isLoading}
+                  data-aos="zoom-in"
+                  data-aos-delay="800"
+                >
+                  {isLoading ? (
+                    <div className="loading-spinner"></div>
+                  ) : (
+                    "Sign In"
+                  )}
+                </button>
+              </form>
+
+              <div
+                className="login-footer"
+                data-aos="fade-up"
+                data-aos-delay="900"
+              >
+                <p className="signup-text">
+                  Don't have an account?{" "}
+                  <Link to="/register" className="signup-link">
+                    Sign up here
+                  </Link>
+                </p>
+              </div>
             </div>
           </div>
 
