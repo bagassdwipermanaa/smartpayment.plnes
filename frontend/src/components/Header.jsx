@@ -46,7 +46,7 @@ const Header = () => {
             <a href="#petunjuk">PETUNJUK</a>
           </li>
           <li data-aos="fade-down" data-aos-delay="400">
-            <a href="#contact">CONTACT US</a>
+            <Link to="/contact">CONTACT US</Link>
           </li>
           <li data-aos="fade-down" data-aos-delay="500">
             <a href="#signin">SIGN IN</a>

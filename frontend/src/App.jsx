@@ -4,6 +4,7 @@ import "aos/dist/aos.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import RegisterPage from "./components/RegisterPage";
+import ContactUsPage from "./components/ContactUsPage";
 import "./App.css";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/contact" element={<ContactUsPage />} />
       </Routes>
     </Router>
   );
