@@ -17,23 +17,23 @@ const HeroSection = () => {
       <div className="hero-content">
         <div className="hero-badge">
           <span className="badge-icon">⚡</span>
-          <span>SOLUSI PEMBAYARAN LISTRIK TERDEPAN</span>
+          <span>SOLUSI PEMBAYARAN VENDOR TERDEPAN</span>
         </div>
 
         <h1 className="hero-title">
           Smart Payment
           <br />
-          <span className="gradient-text">PLN Electricity</span>
+          <span className="gradient-text">PLN - Electricity Services</span>
         </h1>
 
         <p className="hero-subtitle">
-          Bayar tagihan listrik PLN dengan mudah, cepat, dan aman. Nikmati
-          kemudahan pembayaran listrik kapan saja dan di mana saja.
+          Kelola pembayaran tagihan vendor dengan mudah, cepat, dan aman.
+          Platform terintegrasi untuk mengelola semua pembayaran vendor PLN.
         </p>
 
         <div className="hero-buttons">
           <button className="btn-primary">
-            Mulai Bayar Listrik
+            Kelola Pembayaran Vendor
             <span className="btn-arrow">→</span>
           </button>
           <button className="btn-secondary">

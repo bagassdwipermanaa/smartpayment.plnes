@@ -15,15 +15,15 @@ const CTASection = () => {
       <div className="cta-content">
         <div className="cta-badge" data-aos="fade-up" data-aos-delay="200">
           <span className="badge-icon">⚡</span>
-          <span>SOLUSI PEMBAYARAN LISTRIK TERDEPAN</span>
+          <span>SOLUSI PEMBAYARAN VENDOR TERDEPAN</span>
         </div>
 
         <h2 className="cta-title" data-aos="fade-up" data-aos-delay="400">
-          Smart Payment PLN Electricity
+          Smart Payment - Electricity Services
         </h2>
 
         <button className="cta-button" data-aos="fade-up" data-aos-delay="600">
-          Mulai Bayar Listrik →
+          Kelola Pembayaran Vendor →
         </button>
       </div>
     </section>

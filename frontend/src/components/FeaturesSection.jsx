@@ -24,34 +24,36 @@ const FeaturesSection = () => {
   const features = [
     {
       icon: "⚡",
-      title: "Pembayaran Instan",
+      title: "Pembayaran Vendor Instan",
       description:
-        "Bayar listrik dalam hitungan detik dengan konfirmasi real-time",
+        "Proses pembayaran tagihan vendor dalam hitungan detik dengan konfirmasi real-time",
     },
     {
       icon: "🔒",
       title: "Keamanan Maksimal",
-      description: "Data dan transaksi dilindungi dengan enkripsi tingkat bank",
+      description:
+        "Data dan transaksi vendor dilindungi dengan enkripsi tingkat bank",
     },
     {
       icon: "📱",
-      title: "User-Friendly",
-      description: "Interface yang mudah digunakan untuk semua kalangan",
+      title: "Dashboard Terintegrasi",
+      description:
+        "Interface yang mudah digunakan untuk mengelola semua vendor",
     },
     {
       icon: "💰",
-      title: "Tanpa Biaya Admin",
-      description: "Tidak ada potongan atau biaya tambahan apapun",
+      title: "Manajemen Biaya",
+      description: "Kelola anggaran dan biaya vendor dengan transparansi penuh",
     },
     {
       icon: "📋",
-      title: "Riwayat Lengkap",
-      description: "Cek tagihan dan riwayat pembayaran dengan mudah",
+      title: "Riwayat Vendor Lengkap",
+      description: "Cek tagihan dan riwayat pembayaran vendor dengan mudah",
     },
     {
       icon: "🎧",
       title: "Support 24/7",
-      description: "Customer support siap membantu kapan saja",
+      description: "Tim support siap membantu kelola vendor kapan saja",
     },
   ];
 
@@ -63,7 +65,8 @@ const FeaturesSection = () => {
             Fitur <span className="gradient-text">Smart Payment</span>
           </h2>
           <p className="features-subtitle">
-            Nikmati kemudahan pembayaran listrik PLN dengan fitur-fitur unggulan
+            Kelola pembayaran vendor PLN dengan fitur-fitur unggulan dan
+            terintegrasi
           </p>
         </div>
 

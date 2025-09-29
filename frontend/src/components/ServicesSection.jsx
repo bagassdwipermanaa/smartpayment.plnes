@@ -24,34 +24,34 @@ const ServicesSection = () => {
 
   const faqs = [
     {
-      question: "Bagaimana cara bayar listrik di Smart Payment?",
+      question: "Bagaimana cara mengelola pembayaran vendor di Smart Payment?",
       answer:
-        "Sangat mudah! Cukup buka aplikasi, scan QR code dari tagihan listrik atau input nomor pelanggan PLN, pilih metode pembayaran, dan konfirmasi. Pembayaran langsung terverifikasi dalam hitungan detik.",
+        "Sangat mudah! Cukup buka aplikasi, tambah vendor baru atau pilih vendor yang sudah terdaftar, upload tagihan vendor, pilih metode pembayaran, dan konfirmasi. Pembayaran langsung terverifikasi dalam hitungan detik.",
     },
     {
-      question: "Apakah ada biaya admin untuk pembayaran listrik?",
+      question: "Apakah ada biaya admin untuk pembayaran vendor?",
       answer:
-        "Tidak ada sama sekali! Smart Payment tidak memungut biaya admin atau biaya tambahan apapun. Anda hanya membayar sesuai tagihan listrik PLN Anda.",
+        "Tidak ada sama sekali! Smart Payment tidak memungut biaya admin atau biaya tambahan apapun. Anda hanya membayar sesuai tagihan vendor yang sudah disetujui.",
     },
     {
-      question: "Bagaimana keamanan data saya dijamin?",
+      question: "Bagaimana keamanan data vendor dijamin?",
       answer:
-        "Data dan transaksi Anda dilindungi dengan enkripsi tingkat bank dan sistem keamanan berlapis. Kami menggunakan teknologi terdepan untuk memastikan privasi dan keamanan maksimal.",
+        "Data dan transaksi vendor dilindungi dengan enkripsi tingkat bank dan sistem keamanan berlapis. Kami menggunakan teknologi terdepan untuk memastikan privasi dan keamanan maksimal.",
     },
     {
-      question: "Bisa cek riwayat pembayaran listrik?",
+      question: "Bisa cek riwayat pembayaran vendor?",
       answer:
-        "Tentu saja! Anda bisa melihat detail tagihan, riwayat pembayaran lengkap, dan download struk pembayaran kapan saja melalui aplikasi Smart Payment.",
+        "Tentu saja! Anda bisa melihat detail tagihan vendor, riwayat pembayaran lengkap, dan download laporan pembayaran kapan saja melalui dashboard Smart Payment.",
     },
     {
-      question: "Bagaimana jika ada masalah saat pembayaran?",
+      question: "Bagaimana jika ada masalah saat pembayaran vendor?",
       answer:
-        "Tim customer support kami siap membantu 24/7. Anda bisa chat langsung, lihat FAQ, atau ikuti video tutorial yang tersedia di aplikasi.",
+        "Tim support kami siap membantu 24/7. Anda bisa chat langsung, lihat FAQ, atau ikuti video tutorial yang tersedia di aplikasi untuk mengelola vendor.",
     },
     {
       question: "Apakah Smart Payment resmi dari PLN?",
       answer:
-        "Smart Payment adalah platform resmi yang bekerja sama dengan PLN untuk memudahkan pembayaran listrik. Semua transaksi terintegrasi langsung dengan sistem PLN.",
+        "Smart Payment adalah platform resmi yang bekerja sama dengan PLN untuk memudahkan pengelolaan pembayaran vendor. Semua transaksi terintegrasi langsung dengan sistem PLN.",
     },
   ];
 
@@ -68,7 +68,7 @@ const ServicesSection = () => {
           </h2>
           <p className="services-subtitle">
             Temukan jawaban untuk pertanyaan yang paling sering ditanyakan
-            tentang Smart Payment
+            tentang pengelolaan pembayaran vendor di Smart Payment
           </p>
         </div>
 
