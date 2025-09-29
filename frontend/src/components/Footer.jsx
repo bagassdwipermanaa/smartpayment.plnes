@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <div className="contact-section">
+        <div className="footer-contact-section">
           <h3>CONTACT US</h3>
           <div className="contact-info">
             <p>Kantor Pusat PT PLN Electricity Services,</p>

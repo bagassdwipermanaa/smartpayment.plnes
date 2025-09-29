@@ -3261,6 +3261,10 @@ header.scrolled {
   letter-spacing: 1px;
 }
 
+.footer-contact-section {
+  /* Specific styles for footer contact section */
+}
+
 .contact-info p {
   margin-bottom: 8px;
   line-height: 1.6;
