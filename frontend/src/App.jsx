@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
+import RegisterPage from "./components/RegisterPage";
 import "./App.css";
 
 function App() {
@@ -14,7 +16,14 @@ function App() {
     });
   }, []);
 
-  return <Home />;
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/register" element={<RegisterPage />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;

@@ -1,7 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const ServicesSection = () => {
   const [activeFaq, setActiveFaq] = useState(null);
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const faqs = [
     {
@@ -41,9 +60,9 @@ const ServicesSection = () => {
   };
 
   return (
-    <section className="services-section">
+    <section className="services-section" ref={sectionRef}>
       <div className="container">
-        <div className="services-header">
+        <div className={`services-header ${isVisible ? "animate-in" : ""}`}>
           <h2 className="services-main-title">
             Pertanyaan <span className="gradient-text">Sering Diajukan</span>
           </h2>
@@ -57,8 +76,11 @@ const ServicesSection = () => {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className={`faq-item ${activeFaq === index ? "active" : ""}`}
+              className={`faq-item ${activeFaq === index ? "active" : ""} ${
+                isVisible ? "animate-in" : ""
+              }`}
               onClick={() => toggleFaq(index)}
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="faq-question">
                 <h4>{faq.question}</h4>

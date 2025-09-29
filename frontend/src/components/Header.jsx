@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,10 +37,10 @@ const Header = () => {
 
         <ul className="nav-links">
           <li data-aos="fade-down" data-aos-delay="100">
-            <a href="#home">HOME</a>
+            <Link to="/">HOME</Link>
           </li>
           <li data-aos="fade-down" data-aos-delay="200">
-            <a href="#register">REGISTER</a>
+            <Link to="/register">REGISTER</Link>
           </li>
           <li data-aos="fade-down" data-aos-delay="300">
             <a href="#petunjuk">PETUNJUK</a>
