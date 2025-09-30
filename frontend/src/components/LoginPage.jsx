@@ -83,7 +83,7 @@ const LoginPage = () => {
                 data-aos-delay="300"
               >
                 <img
-                  src="/images/logoplnes-removebg-preview.png"
+                  src="/images/PLNES_logo.png"
                   alt="PLN Logo"
                   className="logo-image"
                 />

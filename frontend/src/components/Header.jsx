@@ -22,15 +22,16 @@ const Header = () => {
       >
         <div className="nav-brand">
           <img
-            src="/images/logoplnes-removebg-preview.png"
+            src="/images/PLNES_logo.png"
             alt="PLN Logo"
             style={{
-              width: isScrolled ? "350px" : "500px",
-              height: isScrolled ? "80px" : "110px",
+              width: isScrolled ? "150px" : "300px",
+              height: isScrolled ? "110px" : "140px",
               objectFit: "contain",
               transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
               transform: "none",
               zIndex: 15,
+              filter: "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15))",
             }}
           />
         </div>
