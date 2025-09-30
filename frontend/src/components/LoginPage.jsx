@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -10,6 +10,8 @@ const LoginPage = () => {
   });
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
@@ -21,13 +23,37 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setError("");
 
-    // Simulate API call
-    setTimeout(() => {
-      console.log("Login attempt:", formData);
+    try {
+      const response = await fetch("http://localhost:3000/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Save user data and token to localStorage
+        localStorage.setItem("user", JSON.stringify(data.data.user));
+        localStorage.setItem("token", data.data.token);
+
+        // Navigate to dashboard
+        navigate("/dashboard");
+      } else {
+        setError(data.message || "Login gagal");
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      setError(
+        "Terjadi kesalahan server. Pastikan backend berjalan di port 3000."
+      );
+    } finally {
       setIsLoading(false);
-      // Here you would typically handle the actual login logic
-    }, 1500);
+    }
   };
 
   return (
@@ -71,13 +97,23 @@ const LoginPage = () => {
                 data-aos="fade-left"
                 data-aos-delay="400"
               >
+                {error && (
+                  <div
+                    className="error-message"
+                    data-aos="fade-up"
+                    data-aos-delay="450"
+                  >
+                    {error}
+                  </div>
+                )}
+
                 <div
                   className="form-group"
                   data-aos="fade-up"
                   data-aos-delay="500"
                 >
                   <label htmlFor="email" className="form-label">
-                    Email Address
+                    Email atau Username
                   </label>
                   <div className="input-wrapper">
                     <div className="input-icon">
@@ -91,18 +127,18 @@ const LoginPage = () => {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       >
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                        <polyline points="22,6 12,13 2,6" />
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
                       </svg>
                     </div>
                     <input
-                      type="email"
+                      type="text"
                       id="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
                       className="form-input"
-                      placeholder="Enter your email"
+                      placeholder="Enter your email or username"
                       required
                     />
                   </div>
