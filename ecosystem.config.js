@@ -8,7 +8,7 @@ module.exports = {
       exec_mode: "fork",
       env: {
         NODE_ENV: "production",
-        PORT: 3000,
+        PORT: 8001,
       },
       error_file: "./logs/backend-error.log",
       out_file: "./logs/backend-out.log",
@@ -18,7 +18,7 @@ module.exports = {
     {
       name: "smartpayment-frontend",
       script: "serve",
-      args: "-s frontend/dist -l 3001",
+      args: "frontend/dist -p 3001",
       cwd: "/var/mern/essp",
       instances: 1,
       exec_mode: "fork",
