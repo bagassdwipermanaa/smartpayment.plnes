@@ -25,12 +25,12 @@ const LoginPage = () => {
     setError("");
 
     try {
-      const response = await fetch("http://10.69.255.196:8001/api/auth/login", {
+      const response = await fetch("http://localhost:8001/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        credentials: 'include',
+        credentials: "include",
         body: JSON.stringify(formData),
       });
 
@@ -49,7 +49,7 @@ const LoginPage = () => {
     } catch (error) {
       console.error("Login error:", error);
       setError(
-        "Terjadi kesalahan server. Pastikan backend berjalan di port 3001."
+        "Terjadi kesalahan server. Pastikan backend berjalan di port 8001."
       );
     } finally {
       setIsLoading(false);
