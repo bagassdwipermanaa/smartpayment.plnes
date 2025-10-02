@@ -4939,7 +4939,6 @@ html {
   z-index: 1000;
   background: linear-gradient(90deg, #1e293b 0%, #334155 100%);
   backdrop-filter: blur(15px);
-  border-bottom: 2px solid #ec4899;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -5017,7 +5016,7 @@ html {
 .nav-link {
   display: flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;
