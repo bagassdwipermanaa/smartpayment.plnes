@@ -17,9 +17,9 @@ module.exports = {
     },
     {
       name: "smartpayment-frontend",
-      script: "serve",
-      args: "frontend/dist -p 3001",
-      cwd: "/var/mern/essp",
+      script: "npm",
+      args: "run preview -- --port 3001 --host 0.0.0.0",
+      cwd: "/var/mern/essp/frontend",
       instances: 1,
       exec_mode: "fork",
       env: {
