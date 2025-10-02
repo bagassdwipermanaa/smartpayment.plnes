@@ -1,85 +1,54 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 
 const FeaturesSection = () => {
-  const sectionRef = useRef(null);
-  const [isVisible, setIsVisible] = React.useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   const features = [
     {
-      icon: "⚡",
-      title: "Pembayaran Vendor Instan",
+      icon: "💳",
+      title: "Pembayaran Mudah",
       description:
-        "Proses pembayaran tagihan vendor dalam hitungan detik dengan konfirmasi real-time",
+        "Proses pembayaran yang simpel dan user-friendly untuk semua vendor.",
     },
     {
       icon: "🔒",
-      title: "Keamanan Maksimal",
+      title: "Keamanan Terjamin",
       description:
-        "Data dan transaksi vendor dilindungi dengan enkripsi tingkat bank",
+        "Sistem keamanan berlapis untuk melindungi data dan transaksi Anda.",
     },
     {
-      icon: "📱",
-      title: "Dashboard Terintegrasi",
-      description:
-        "Interface yang mudah digunakan untuk mengelola semua vendor",
+      icon: "⚡",
+      title: "Proses Cepat",
+      description: "Transaksi diproses dengan cepat untuk efisiensi maksimal.",
     },
     {
-      icon: "💰",
-      title: "Manajemen Biaya",
-      description: "Kelola anggaran dan biaya vendor dengan transparansi penuh",
-    },
-    {
-      icon: "📋",
-      title: "Riwayat Vendor Lengkap",
-      description: "Cek tagihan dan riwayat pembayaran vendor dengan mudah",
-    },
-    {
-      icon: "🎧",
-      title: "Support 24/7",
-      description: "Tim support siap membantu kelola vendor kapan saja",
+      icon: "📊",
+      title: "Laporan Real-time",
+      description: "Dashboard dan laporan yang memberikan insight mendalam.",
     },
   ];
 
   return (
-    <section className="features-section" ref={sectionRef}>
-      <div className="container">
-        <div className={`features-header ${isVisible ? "animate-in" : ""}`}>
-          <h2 className="features-main-title">
-            Fitur <span className="gradient-text">Smart Payment</span>
+    <section className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Mengapa Memilih Smart Payment?
           </h2>
-          <p className="features-subtitle">
-            Kelola pembayaran vendor PLN dengan fitur-fitur unggulan dan
-            terintegrasi
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Platform pembayaran yang dirancang khusus untuk memenuhi kebutuhan
+            vendor PLN
           </p>
         </div>
 
-        <div className="features-grid">
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <div
-              key={index}
-              className={`feature-card ${isVisible ? "animate-in" : ""}`}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="feature-icon">{feature.icon}</div>
-              <h4 className="feature-title">{feature.title}</h4>
-              <p className="feature-description">{feature.description}</p>
+            <div key={index} className="text-center">
+              <div className="text-4xl mb-4">{feature.icon}</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                {feature.title}
+              </h3>
+              <p className="text-gray-600">{feature.description}</p>
             </div>
           ))}
         </div>

@@ -1,59 +1,71 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      setIsScrolled(scrollTop > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <header className={isScrolled ? "scrolled" : ""}>
-      <nav
-        className={`navbar ${isScrolled ? "scrolled" : ""}`}
-        data-aos="fade-down"
-      >
-        <div className="nav-brand">
-          <img
-            src="/images/PLNES_logo.png"
-            alt="PLN Logo"
-            style={{
-              width: isScrolled ? "150px" : "300px",
-              height: isScrolled ? "110px" : "140px",
-              objectFit: "contain",
-              transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-              transform: "none",
-              zIndex: 15,
-              filter: "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15))",
-            }}
-          />
-        </div>
+    <header className="bg-white shadow-sm border-b">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <div className="flex items-center">
+            <img
+              src="/images/PLNES_logo.png"
+              alt="PLN Logo"
+              className="h-12 w-auto"
+            />
+            <span className="ml-3 text-xl font-bold text-gray-900">
+              Smart Payment
+            </span>
+          </div>
 
-        <ul className="nav-links">
-          <li data-aos="fade-down" data-aos-delay="100">
-            <Link to="/">HOME</Link>
-          </li>
-          <li data-aos="fade-down" data-aos-delay="200">
-            <Link to="/register">REGISTER</Link>
-          </li>
-          <li data-aos="fade-down" data-aos-delay="300">
-            <a href="#petunjuk">PETUNJUK</a>
-          </li>
-          <li data-aos="fade-down" data-aos-delay="400">
-            <Link to="/contact">CONTACT US</Link>
-          </li>
-          <li data-aos="fade-down" data-aos-delay="500">
-            <Link to="/login">SIGN IN</Link>
-          </li>
-        </ul>
-      </nav>
+          {/* Navigation */}
+          <nav className="hidden md:flex space-x-8">
+            <Link
+              to="/"
+              className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors"
+            >
+              Home
+            </Link>
+            <Link
+              to="/register"
+              className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors"
+            >
+              Register
+            </Link>
+            <Link
+              to="/contact"
+              className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors"
+            >
+              Contact
+            </Link>
+            <Link
+              to="/login"
+              className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors"
+            >
+              Sign In
+            </Link>
+          </nav>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden">
+            <button className="text-gray-700 hover:text-blue-600">
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
     </header>
   );
 };
