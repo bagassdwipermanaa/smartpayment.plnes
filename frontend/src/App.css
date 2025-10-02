@@ -25,13 +25,13 @@ body {
   color: var(--text-primary);
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   overflow-x: hidden;
-  padding-top: 80px;
+  padding-top: 70px;
 }
 
 /* Override body padding for login page */
 .home .login-page {
   margin-top: -80px;
-  padding-top: 100px;
+  padding-top: 70px;
 }
 
 .home {
@@ -111,22 +111,26 @@ header.scrolled {
 }
 
 .navbar {
-  background: transparent;
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   color: white;
-  padding: 15px 100px;
+  padding: 8px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: none;
-  position: relative;
-  z-index: 10;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   width: 100%;
-  height: 80px;
-  min-height: 80px;
-  max-height: 80px;
+  height: 70px;
+  min-height: 70px;
+  max-height: 70px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: visible;
 }
@@ -1189,45 +1193,26 @@ header.scrolled {
 }
 
 .nav-btn {
-  width: 56px;
-  height: 56px;
-  border: 2px solid #e2e8f0;
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-  border-radius: 16px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
-  color: #64748b;
+  font-size: 16px;
+  color: #cbd5e1;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
-.nav-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  border-radius: 14px;
-}
-
-.nav-btn:hover::before {
-  opacity: 1;
-}
-
 .nav-btn:hover {
-  border-color: transparent;
+  background: rgba(255, 255, 255, 0.1);
   color: white;
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 8px 25px rgba(79, 172, 254, 0.3);
+  transform: translateY(-1px);
 }
 
 .nav-btn span {
@@ -2775,7 +2760,7 @@ header.scrolled {
 @media (max-width: 768px) {
   .home .login-page {
     margin-top: -60px;
-    padding-top: 80px;
+    padding-top: 70px;
   }
 
   .login-page {
@@ -4770,7 +4755,7 @@ html {
 .dashboard {
   min-height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding-top: 80px;
+  padding-top: 70px;
 }
 
 .dashboard-loading {
@@ -4969,8 +4954,8 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px;
-  height: 60px;
+  padding: 0 30px;
+  height: 65px;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -4987,10 +4972,10 @@ html {
 }
 
 .nav-logo {
-  width: 50px;
-  height: 50px;
+  width: 200px;
+  height: 200px;
   object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
   transition: all 0.3s ease;
 }
 
@@ -5001,18 +4986,18 @@ html {
 
 .brand-text h1 {
   color: white;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   font-weight: 700;
   margin: 0;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 .brand-text p {
   color: #cbd5e1;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   margin: 0;
   font-weight: 500;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 .nav-menu {
@@ -5024,33 +5009,31 @@ html {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 4px;
+  gap: 8px;
   margin: 0;
   padding: 0;
 }
 
 .nav-link {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 2px;
+  gap: 6px;
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;
-  font-size: 8px;
-  padding: 4px 8px;
-  border-radius: 4px;
+  font-size: 10px;
+  padding: 8px 12px;
+  border-radius: 6px;
   transition: all 0.3s ease;
   position: relative;
   background: transparent;
   border: 1px solid transparent;
   text-transform: uppercase;
   letter-spacing: 0.3px;
-  min-width: 45px;
-  height: 35px;
-  justify-content: center;
+  min-width: 80px;
+  height: 36px;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  line-height: 1;
+  line-height: 1.2;
 }
 
 .nav-link:hover {
@@ -5068,54 +5051,68 @@ html {
 }
 
 .nav-icon {
-  font-size: 11px;
+  font-size: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1px;
+  width: 16px;
+  height: 16px;
 }
 
 .badge {
   background: #ef4444;
   color: white;
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 700;
-  padding: 2px 6px;
-  border-radius: 10px;
-  min-width: 16px;
-  height: 16px;
+  padding: 1px 4px;
+  border-radius: 8px;
+  min-width: 12px;
+  height: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 6px;
-  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  box-shadow: 0 1px 3px rgba(239, 68, 68, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .nav-user {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+}
+
+.nav-user:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
 }
 
 .user-info {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
+  gap: 6px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  transition: none;
 }
 
 .user-info:hover {
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-1px);
+  background: transparent;
+  transform: none;
 }
 
 .user-avatar {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
   border-radius: 50%;
   display: flex;
@@ -5123,51 +5120,57 @@ html {
   justify-content: center;
   color: white;
   font-weight: 600;
-  font-size: 14px;
-  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+  font-size: 12px;
+  box-shadow: 0 2px 6px rgba(59, 130, 246, 0.3);
 }
 
 .user-details {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
 }
 
 .user-name {
   color: white;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 11px;
   line-height: 1;
 }
 
 .user-role {
   color: #cbd5e1;
-  font-size: 11px;
+  font-size: 9px;
   font-weight: 500;
 }
 
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
+  margin-left: 8px;
+  padding-left: 8px;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .notification-btn {
   position: relative;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  border: none;
   color: #cbd5e1;
-  padding: 10px;
-  border-radius: 8px;
+  padding: 6px;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
 }
 
 .notification-btn:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.1);
   color: white;
   transform: translateY(-1px);
 }
@@ -5258,54 +5261,103 @@ html {
 
 /* Home Header Responsive */
 @media (max-width: 1024px) {
-  .home-navbar {
-    padding: 0 20px;
+  .navbar {
+    padding: 6px 16px;
+    height: 60px;
+    min-height: 60px;
+    max-height: 60px;
   }
 
   .nav-menu {
     display: none;
   }
 
+  .nav-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-link {
+    font-size: 9px;
+    padding: 6px 10px;
+    min-width: 70px;
+    height: 32px;
+  }
+
   .nav-user {
-    gap: 12px;
+    gap: 6px;
+    padding: 4px 8px;
   }
 
   .user-info {
-    padding: 6px 12px;
+    gap: 4px;
   }
 
   .user-details {
     display: none;
   }
+
+  .nav-actions {
+    gap: 4px;
+    margin-left: 4px;
+    padding-left: 4px;
+  }
 }
 
 @media (max-width: 768px) {
-  .home-navbar {
-    padding: 0 15px;
-    height: 60px;
+  .navbar {
+    padding: 4px 12px;
+    height: 56px;
+    min-height: 56px;
+    max-height: 56px;
   }
 
   .brand-text h1 {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
   }
 
   .brand-text p {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
 
   .nav-logo {
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .nav-link {
+    font-size: 8px;
+    padding: 6px 8px;
+    min-width: 60px;
+    height: 28px;
+  }
+
+  .nav-user {
+    gap: 4px;
+    padding: 3px 6px;
   }
 
   .user-info {
-    padding: 4px 8px;
+    gap: 3px;
   }
 
   .user-avatar {
-    width: 30px;
-    height: 30px;
-    font-size: 12px;
+    width: 16px;
+    height: 16px;
+    font-size: 8px;
+  }
+
+  .nav-actions {
+    gap: 3px;
+    margin-left: 3px;
+    padding-left: 3px;
+  }
+
+  .notification-btn,
+  .nav-btn {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
   }
 }
 
