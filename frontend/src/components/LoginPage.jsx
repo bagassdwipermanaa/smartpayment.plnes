@@ -25,16 +25,27 @@ const LoginPage = () => {
     setError("");
 
     try {
-      const response = await fetch("http://localhost:8001/api/auth/login", {
+      console.log("Attempting login with:", formData);
+      
+      const response = await fetch("/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Accept": "application/json",
         },
+        mode: "cors",
         credentials: "include",
         body: JSON.stringify(formData),
       });
 
+      console.log("Response status:", response.status);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
       const data = await response.json();
+      console.log("Response data:", data);
 
       if (data.success) {
         // Save user data and token to localStorage
