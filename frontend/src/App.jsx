@@ -3,6 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
+import HomePage from "./components/HomePage";
 import RegisterPage from "./components/RegisterPage";
 import ContactUsPage from "./components/ContactUsPage";
 import LoginPage from "./components/LoginPage";
@@ -23,6 +24,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/home" element={<HomePage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/contact" element={<ContactUsPage />} />
         <Route path="/login" element={<LoginPage />} />

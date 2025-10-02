@@ -41,8 +41,8 @@ const LoginPage = () => {
         localStorage.setItem("user", JSON.stringify(data.data.user));
         localStorage.setItem("token", data.data.token);
 
-        // Navigate to dashboard
-        navigate("/dashboard");
+        // Navigate to home page
+        navigate("/home");
       } else {
         setError(data.message || "Login gagal");
       }
