@@ -13,9 +13,6 @@ const Header = () => {
               alt="PLN Logo"
               className="h-12 w-auto"
             />
-            <span className="ml-3 text-xl font-bold text-gray-900">
-              Smart Payment
-            </span>
           </div>
 
           {/* Navigation */}
