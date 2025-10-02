@@ -3,10 +3,15 @@ const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8001;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:3001', 'http://10.69.255.196:3001', 'http://localhost:3000', 'http://10.69.255.196:3000'],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
 
 // Routes
@@ -25,7 +30,8 @@ app.get("/", (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`API Documentation: http://localhost:${PORT}`);
+  console.log(`External access: http://10.69.255.196:${PORT}`);
 });

@@ -25,11 +25,12 @@ const LoginPage = () => {
     setError("");
 
     try {
-      const response = await fetch("http://localhost:3000/api/auth/login", {
+      const response = await fetch("http://10.69.255.196:8001/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
+        credentials: 'include',
         body: JSON.stringify(formData),
       });
 
@@ -40,15 +41,15 @@ const LoginPage = () => {
         localStorage.setItem("user", JSON.stringify(data.data.user));
         localStorage.setItem("token", data.data.token);
 
-        // Navigate to home page
-        navigate("/home");
+        // Navigate to dashboard page
+        navigate("/dashboard");
       } else {
         setError(data.message || "Login gagal");
       }
     } catch (error) {
       console.error("Login error:", error);
       setError(
-        "Terjadi kesalahan server. Pastikan backend berjalan di port 3000."
+        "Terjadi kesalahan server. Pastikan backend berjalan di port 3001."
       );
     } finally {
       setIsLoading(false);
